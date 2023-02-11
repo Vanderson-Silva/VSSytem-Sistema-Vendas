@@ -2,21 +2,31 @@ package com.vssystem.model;
 
 
 import ch.qos.logback.core.status.Status;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
 
-public class Venda {
-    private Integer id;
-    private LocalDate dataVenda = LocalDate.now();
-    private Status status;
-    private String obervacoes;
+@Entity
+public class Venda implements Serializable {
+    private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate dataVenda = LocalDate.now();
+    private String obervacoes;
     private String titulo;
 
-
+    @ManyToOne
+    @JoinColumn(name = "produto_id")
     private Produto produto;
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
     public Venda() {
@@ -25,7 +35,6 @@ public class Venda {
 
     public Venda(Integer id, Status status, String obervacoes, String titulo, Produto produto, Cliente cliente) {
         this.id = id;
-        this.status = status;
         this.obervacoes = obervacoes;
         this.titulo = titulo;
         this.produto = produto;
@@ -48,13 +57,6 @@ public class Venda {
         this.dataVenda = dataVenda;
     }
 
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
 
     public String getObervacoes() {
         return obervacoes;
