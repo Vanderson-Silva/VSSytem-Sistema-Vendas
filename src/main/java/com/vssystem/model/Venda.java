@@ -33,7 +33,7 @@ public class Venda implements Serializable {
         super();
     }
 
-    public Venda(Integer id, Status status, String obervacoes, String titulo, Produto produto, Cliente cliente) {
+    public Venda(Integer id,String obervacoes, String titulo, Produto produto, Cliente cliente) {
         this.id = id;
         this.obervacoes = obervacoes;
         this.titulo = titulo;
