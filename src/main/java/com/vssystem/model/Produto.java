@@ -20,7 +20,7 @@ public class Produto extends Pessoa implements Serializable {
         addPerfis(Perfil.CLIENTE);
     }
 
-    public Produto(Integer id, String nome, String cpf, String email, String senha, List<Venda> vendas) {
+    public Produto(Integer id, String nome, String cpf, String email, String senha) {
         super(id, nome, cpf, email, senha);
         addPerfis(Perfil.CLIENTE);
 
