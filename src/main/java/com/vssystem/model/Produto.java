@@ -1,5 +1,6 @@
 package com.vssystem.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.vssystem.Enum.Perfil;
 
 import javax.persistence.Entity;
@@ -12,6 +13,7 @@ import java.util.List;
 public class Produto extends Pessoa implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "produto")
     private List<Venda> vendas = new ArrayList<>();
 
