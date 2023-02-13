@@ -1,5 +1,7 @@
 package com.vssystem.service;
 
+
+import com.vssystem.exception.ObjectnotFoundException;
 import com.vssystem.model.Produto;
 import com.vssystem.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,6 @@ public class ProdutoService {
 
     public Produto findById(Integer id) {
         Optional<Produto> obj = produtoRepository.findById(id);
-        return obj.orElse(null);
+        return obj.orElseThrow(() -> new ObjectnotFoundException("Objeto nao encontrado! id:" + id));
     }
 }
