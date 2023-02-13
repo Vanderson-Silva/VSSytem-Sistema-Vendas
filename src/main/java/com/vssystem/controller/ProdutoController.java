@@ -1,5 +1,6 @@
 package com.vssystem.controller;
 
+import com.vssystem.dtos.ProdutoDTO;
 import com.vssystem.model.Produto;
 import com.vssystem.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,8 @@ public class ProdutoController {
     private ProdutoService produtoService;
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Produto> findById(@PathVariable Integer id) {
+    public ResponseEntity<ProdutoDTO> findById(@PathVariable Integer id) {
         Produto obj = produtoService.findById(id);
-        return ResponseEntity.ok().body(obj);
+        return ResponseEntity.ok().body(new ProdutoDTO(obj));
     }
 }
