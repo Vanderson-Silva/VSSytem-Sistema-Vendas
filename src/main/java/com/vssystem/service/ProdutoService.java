@@ -1,6 +1,7 @@
 package com.vssystem.service;
 
 
+import com.vssystem.dtos.ProdutoDTO;
 import com.vssystem.exception.ObjectnotFoundException;
 import com.vssystem.model.Produto;
 import com.vssystem.repository.ProdutoRepository;
@@ -22,5 +23,12 @@ public class ProdutoService {
 
     public List<Produto> findAll() {
         return produtoRepository.findAll();
+    }
+
+    public Produto create(ProdutoDTO obj) {
+        obj.setId(null);
+        Produto newObj = new Produto(obj);
+        return produtoRepository.save(newObj);
+
     }
 }

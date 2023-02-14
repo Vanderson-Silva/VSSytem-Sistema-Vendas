@@ -26,6 +26,8 @@ public class ProdutoDTO implements Serializable {
     protected LocalDate dataCriacao = LocalDate.now();
 
     public ProdutoDTO() {
+        super();
+        addPerfis(Perfil.CLIENTE);
     }
 
     public ProdutoDTO(Produto obj) {
@@ -36,6 +38,7 @@ public class ProdutoDTO implements Serializable {
         this.senha = obj.getSenha();
         this.perfis = obj.getPerfis().stream().map(x -> x.getCodigo()).collect(Collectors.toSet());
         this.dataCriacao = obj.getDataCriacao();
+        addPerfis(Perfil.CLIENTE);
     }
 
     public Integer getId() {
