@@ -1,4 +1,4 @@
-package com.vssystem.exception;
+package com.vssystem.Exception;
 
 import java.io.Serializable;
 

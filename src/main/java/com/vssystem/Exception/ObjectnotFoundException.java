@@ -1,4 +1,4 @@
-package com.vssystem.exception;
+package com.vssystem.Exception;
 
 public class ObjectnotFoundException extends RuntimeException {
     private static final long serialVersionUID = 1L;

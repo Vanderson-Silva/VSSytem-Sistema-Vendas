@@ -1,8 +1,8 @@
-package com.vssystem.controller;
+package com.vssystem.Controller;
 
-import com.vssystem.dtos.ProdutoDTO;
-import com.vssystem.model.Produto;
-import com.vssystem.service.ProdutoService;
+import com.vssystem.Dtos.ProdutoDTO;
+import com.vssystem.Entity.Produto;
+import com.vssystem.Service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping(value = "/produtos")
+@RequestMapping(value = "/api")
 public class ProdutoController {
 
     // ResponseEntity ele representa toda a resposa http
@@ -21,13 +21,13 @@ public class ProdutoController {
     @Autowired
     private ProdutoService produtoService;
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/produtos/{id}")
     public ResponseEntity<ProdutoDTO> findById(@PathVariable Integer id) {
         Produto obj = produtoService.findById(id);
         return ResponseEntity.ok().body(new ProdutoDTO(obj));
     }
 
-    @GetMapping
+    @GetMapping(value ="/produtos")
     public ResponseEntity<List<ProdutoDTO>> findAll() {
         List<Produto> list = produtoService.findAll();
         List<ProdutoDTO> listDTO = list.stream().map(obj -> new ProdutoDTO(obj)).collect(Collectors.toList());

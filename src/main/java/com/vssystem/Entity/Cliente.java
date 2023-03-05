@@ -1,4 +1,4 @@
-package com.vssystem.model;
+package com.vssystem.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.vssystem.Enum.Perfil;

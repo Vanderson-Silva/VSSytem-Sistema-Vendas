@@ -1,8 +1,8 @@
-package com.vssystem.model;
+package com.vssystem.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.vssystem.Enum.Perfil;
-import com.vssystem.dtos.ProdutoDTO;
+import com.vssystem.Dtos.ProdutoDTO;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;

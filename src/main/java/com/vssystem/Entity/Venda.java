@@ -1,7 +1,6 @@
-package com.vssystem.model;
+package com.vssystem.Entity;
 
 
-import ch.qos.logback.core.status.Status;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;

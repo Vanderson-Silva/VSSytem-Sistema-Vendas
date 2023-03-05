@@ -1,10 +1,10 @@
-package com.vssystem.service;
+package com.vssystem.Service;
 
 
-import com.vssystem.dtos.ProdutoDTO;
-import com.vssystem.exception.ObjectnotFoundException;
-import com.vssystem.model.Produto;
-import com.vssystem.repository.ProdutoRepository;
+import com.vssystem.Dtos.ProdutoDTO;
+import com.vssystem.Exception.ObjectnotFoundException;
+import com.vssystem.Entity.Produto;
+import com.vssystem.Repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

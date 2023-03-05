@@ -1,6 +1,6 @@
-package com.vssystem.config;
+package com.vssystem.Config;
 
-import com.vssystem.service.DBService;
+import com.vssystem.Service.DBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
